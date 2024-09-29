@@ -1,0 +1,26 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      url: jdbc:mysql://192.168.100.80:3306/top_news
+      username: root
+      password: abc123
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis-plus:
+  type-aliases-package:  com.atguigu.pojo
+  global-config:
+    db-config:
+      logic-delete-field: isDeleted
+      id-type: auto
+      table-prefix: news_
+
+jwt:
+  token:
+    tokenExpiration: 120
+    tokenSignKey: headline123456
